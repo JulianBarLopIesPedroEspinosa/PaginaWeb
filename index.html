@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Corroscol</title>
-
+    
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
     <header>
-
-        <nav>
-
             <!-- LOGO -->
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo">
-            </div>
+        <div class="logo" >
+            <img src="img/logo.png" alt="Logo" id="logo">
+        </div>
+
+        <nav class="menu" id="menu">
+
 
             <!-- SERVICIOS -->
             <div class="servicios-menu">
@@ -34,7 +35,7 @@
             </a>
 
             <!-- TIENDA -->
-            <a href="#tienda">
+            <a href="#">
                 Tienda
             </a>
 
@@ -51,25 +52,20 @@
     <main>
 
         <!-- CARRUSEL -->
-        <section id="inicio" class="carrusel">
+       <section class="hero">
 
-            <button class="flecha izquierda">
-                &lt;
-            </button>
-
-            <h1>
-                C A R R O U S E L
-            </h1>
-
-            <button class="flecha derecha">
-                &gt;
-            </button>
+            <div class="hero-slides">
+                <img src="img/perro1.jpg" class="slide active">
+                <img src="img/perro2.jpg" class="slide">
+                <img src="img/perro3.jpg" class="slide">
+            </div>
 
         </section>
 
 
         <!-- QUIENES SOMOS -->
         <section id="quienes-somos">
+            <div class="separador"></div>
 
             <h2>
                 ¿Quienes somos?
@@ -82,9 +78,7 @@
 
                 <!-- IMAGEN -->
                 <div class="imagen-nosotros">
-
-                    <img src="img/quienes-somos.jpg"
-                         alt="Nuestra peluquería">
+                    <img src="img/abautUs.jpg" alt="abautUs">
 
                 </div>
 
@@ -98,9 +92,7 @@
                         at vix ad putent delectus delicata usu.
                         Vidit dissentiet eos cu eum an brute
                         copiosae hendrerit.
-                    </p>
-
-                    <p>
+                        <br><br><br>
                         Eos erant dolorum an. Per facer affert ut.
                         Mei iisque mentitum moderatius cu.
                         Sit munere facilis accusam eu dicat falli
@@ -110,41 +102,63 @@
                 </div>
 
             </div>
+            <div class="separador"></div>
 
         </section>
 
 
         <!-- SERVICIOS -->
-        <section id="servicios">
+<!-- SERVICIOS -->
+<section id="servicios">
 
-            <h2>Servicios</h2>
+    <h2>Servicios</h2>
 
-        </section>
+    <div class="tarjetas-servicios">
+
+        <!-- TARJETA PERROS -->
+        <div class="tarjeta-servicio">
+            <img src="img/perro4.jpg" alt="Servicios para perros">
+
+            <div class="contenido-tarjeta">
+                <h3>Servicios para perros</h3>
+
+                <p>
+                    Cuidado y peluquería para que tu perro
+                    esté limpio, sano y guapo.
+                </p>
+
+                <a href="#cita">Ver servicios</a>
+            </div>
+        </div>
 
 
-        <!-- TIENDA -->
-        <section id="tienda">
+        <!-- TARJETA GATOS -->
+        <div class="tarjeta-servicio">
+            <img src="img/gato1.jpg" alt="Servicios para gatos">
 
-            <h2>Tienda</h2>
+            <div class="contenido-tarjeta">
+                <h3>Servicios para gatos</h3>
 
-        </section>
+                <p>
+                    Cuidados especiales y peluquería
+                    adaptados a las necesidades de tu gato.
+                </p>
 
+                <a href="#cita">Ver servicios</a>
+            </div>
+        </div>
 
-        <!-- PEDIR CITA -->
-        <section id="cita">
+    </div>
 
-            <h2>Pide Cita</h2>
+</section>
 
-        </section>
-
-    </main>
-
+            <div class="separador"></div>
 
     <!-- FOOTER -->
     <footer>
 
         <p>
-            &copy; 2026 Corroscol
+            &copy; 2026 Julián Barreno López
         </p>
 
     </footer>

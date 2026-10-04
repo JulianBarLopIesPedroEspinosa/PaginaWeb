@@ -10,7 +10,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    color: #444;
+    color: rgb(1, 34, 115);
+;
 }
 
 
@@ -20,16 +21,40 @@ body {
 
 header {
     width: 100%;
-}
-
-nav {
+    height: 104px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #fff;
-
     border: 2px solid #333;
+    z-index: 1000;
+
+    transition: 0.3s ease;
+}
+
+header.compacto {
+    width: 104px;
+    height: 104px;
+    justify-content: flex-start;
+}
+
+header.compacto .menu {
+    display: none;
+}
+
+.menu{
+    transition: .3s ease;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translate(0);
+}
+.showMenu{
+    transform: translate(-100%);
 }
 
 
@@ -37,9 +62,7 @@ nav {
 
 .logo {
     height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
 }
 
 .logo img {
@@ -55,9 +78,14 @@ nav {
 nav a {
     color: rgb(1, 34, 115);
     text-decoration: none;
-
+    text-transform: capitalize;
+    transition: .3s ease;
     font-size: 28px;
     font-weight: bold;
+}
+
+nav a:hover {
+    color: #bde36a;
 }
 
 
@@ -85,49 +113,57 @@ nav a {
     border-radius: 12px;
 }
 
+.boton-cita:hover {
+    background-color: rgb(1, 34, 115);  
+}
+
 
 /* ------------------------- */
 /*         CARRUSEL          */
 /* ------------------------- */
 
-.carrusel {
-    height: 270px;
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin-top: 100px; /* Evita que el header fijo tape el carrusel */
+    overflow: hidden;
+}
 
-    background-color: #ddd;
+.hero-slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
-    border: 2px solid #333;
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 
-    padding: 0 15px;
+    color: white;
+    text-align: center;
 }
-
-
-/* TÍTULO */
-
-.carrusel h1 {
-    font-size: 42px;
-    letter-spacing: 10px;
-    color: #444;
-}
-
-
-/* FLECHAS */
-
-.flecha {
-    background: none;
-    border: none;
-
-    font-size: 42px;
-    font-weight: bold;
-
-    color: #444;
-
-    cursor: pointer;
-}
-
 
 /* ------------------------- */
 /*       QUIENES SOMOS       */
@@ -158,7 +194,7 @@ nav a {
     width: 100%;
     height: 9px;
 
-    background-color: #111;
+  background-color: #bde36a;
 }
 
 
@@ -177,7 +213,7 @@ nav a {
 
 .imagen-nosotros {
     width: 40%;
-    height: 250px;
+    height: 650px;
 
     background-color: #ddd;
 
@@ -200,8 +236,9 @@ nav a {
     width: 60%;
 
     padding: 15px 70px;
-
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
     line-height: 1.3;
 }
 
@@ -211,26 +248,95 @@ nav a {
 
 
 /* ------------------------- */
-/*       OTRAS SECCIONES     */
+/*        SERVICIOS          */
 /* ------------------------- */
 
-#servicios,
-#tienda,
-#cita {
-    min-height: 300px;
-
+#servicios {
+    min-height: 500px;
     padding: 50px;
-
     text-align: center;
 }
 
-#servicios h2,
-#tienda h2,
-#cita h2 {
-    font-size: 35px;
+#servicios h2 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 40px;
 }
 
 
+/* TARJETAS */
+
+.tarjetas-servicios {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* TARJETA */
+
+.tarjeta-servicio {
+    width: 45%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #bde36a;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-8px);
+}
+
+
+/* IMAGEN */
+
+.tarjeta-servicio img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+/* CONTENIDO */
+
+.contenido-tarjeta {
+    padding: 25px;
+}
+
+.contenido-tarjeta h3 {
+    font-size: 28px;
+    color: rgb(1, 34, 115);
+    margin-bottom: 15px;
+}
+
+.contenido-tarjeta p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+
+/* BOTÓN */
+
+.contenido-tarjeta a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #bde36a;
+    color: rgb(1, 34, 115);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.contenido-tarjeta a:hover {
+    background-color: rgb(1, 34, 115);
+    color: #bde36a;
+}
 /* ------------------------- */
 /*          FOOTER           */
 /* ------------------------- */
