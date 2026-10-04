@@ -47,3 +47,70 @@ function cambiarFoto() {
 }
 
 setInterval(cambiarFoto, 4000);
+const resenas = document.querySelectorAll(".resena");
+const puntos = document.querySelectorAll(".punto");
+
+const anterior = document.getElementById("anterior");
+const siguiente = document.getElementById("siguiente");
+
+let resenaActual = 0;
+
+
+function mostrarResena(numero) {
+
+    resenas.forEach(resena => {
+        resena.classList.remove("activa");
+    });
+
+    puntos.forEach(punto => {
+        punto.classList.remove("activo");
+    });
+
+    resenas[numero].classList.add("activa");
+    puntos[numero].classList.add("activo");
+
+    resenaActual = numero;
+}
+
+
+/* SIGUIENTE */
+
+siguiente.addEventListener("click", () => {
+
+    let siguienteResena = resenaActual + 1;
+
+    if (siguienteResena >= resenas.length) {
+        siguienteResena = 0;
+    }
+
+    mostrarResena(siguienteResena);
+});
+
+
+/* ANTERIOR */
+
+anterior.addEventListener("click", () => {
+
+    let anteriorResena = resenaActual - 1;
+
+    if (anteriorResena < 0) {
+        anteriorResena = resenas.length - 1;
+    }
+
+    mostrarResena(anteriorResena);
+});
+
+
+/* CAMBIO AUTOMÁTICO */
+
+setInterval(() => {
+
+    let siguienteResena = resenaActual + 1;
+
+    if (siguienteResena >= resenas.length) {
+        siguienteResena = 0;
+    }
+
+    mostrarResena(siguienteResena);
+
+}, 5000);
