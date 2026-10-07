@@ -85,7 +85,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #bde36a;
+    color: #f69;
 }
 
 
@@ -106,7 +106,7 @@ nav a:hover {
 /* BOTÓN CITA */
 
 .boton-cita {
-    background-color: #bde36a;
+    background-color: #f69;
 
     padding: 10px 32px;
 
@@ -194,7 +194,7 @@ nav a:hover {
     width: 100%;
     height: 9px;
 
-  background-color: #bde36a;
+  background-color: #f69;
 }
 
 
@@ -283,7 +283,7 @@ nav a:hover {
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 15px #bde36a;
+    box-shadow: 0 4px 15px #f69;
     transition: transform 0.3s ease;
 }
 
@@ -325,7 +325,7 @@ nav a:hover {
 .contenido-tarjeta a {
     display: inline-block;
     padding: 10px 25px;
-    background-color: #bde36a;
+    background-color: #f69;
     color: rgb(1, 34, 115);
     text-decoration: none;
     border-radius: 10px;
@@ -335,7 +335,7 @@ nav a:hover {
 
 .contenido-tarjeta a:hover {
     background-color: rgb(1, 34, 115);
-    color: #bde36a;
+    color: #f69;
 }
 
 
@@ -443,7 +443,7 @@ nav a:hover {
 .controles-resenas button {
     border: none;
     background-color: rgb(1, 34, 115);
-    color: #bde36a;
+    color: #ff6699;
 
     width: 40px;
     height: 40px;
@@ -457,7 +457,7 @@ nav a:hover {
 }
 
 .controles-resenas button:hover {
-    background-color: #bde36a;
+    background-color: #09f;
     color: rgb(1, 34, 115);
 }
 
@@ -473,7 +473,7 @@ nav a:hover {
     width: 10px;
     height: 10px;
 
-    background-color: #bde36a;
+    background-color: #f69;
 
     border-radius: 50%;
 
